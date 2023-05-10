@@ -1,11 +1,20 @@
 @startuml
-'https://plantuml.com/sequence-diagram
 
-autonumber
+:Socio:
+:Bibliotecario:
 
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
+rectangle Biblioteca{
+(Reservar Libro)
+(Prestar Libro)
+(Devolver Libro)
+(Actualizar Catálogo)
+}
 
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
+:Socio: -- (Reservar Libro)
+:Socio: -- (Prestar Libro)
+:Socio: -- (Devolver Libro)
+
+:Bibliotecario: -- (Prestar Libro)
+:Bibliotecario: -- (Actualizar Catálogo)
+
 @enduml
