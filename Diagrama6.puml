@@ -1,0 +1,29 @@
+@startuml
+
+:Empleado:
+
+(Alta Cliente)
+(Introducir Pedido)
+(Obtener Estado Pedido)
+(Cancelar Pedido)
+(Buscar Cliente)
+(Pago en Cuenta)
+(Buscar Pedido)
+(Pago con tarjeta)
+
+:Empleado: -- (Alta Cliente)
+:Empleado: -- (Introducir Pedido)
+:Empleado: -- (Obtener Estado Pedido)
+:Empleado: -- (Buscar Pedido)
+:Empleado: -- (Cancelar Pedido)
+
+(Alta Cliente) ..> (Introducir Pedido) : extiende
+(Introducir Pedido) ..> (Buscar Cliente) : incluye
+
+(Obtener Estado Pedido) ..> (Buscar Pedido) :incluye
+(Cancelar Pedido) ..> (Buscar Pedido) :incluye
+
+(Pago en Cuenta) ..> (Introducir Pedido) : extiende
+(Pago con tarjeta) ..> (Introducir Pedido) : extiende
+
+@enduml
